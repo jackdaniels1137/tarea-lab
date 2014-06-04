@@ -51,7 +51,4 @@ public class Ventana extends JFrame {
 	public void setSeleccionado(int seleccionado) {
 		this.seleccionado = seleccionado;
 	}
-	
-	
-
 }
