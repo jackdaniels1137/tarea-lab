@@ -7,7 +7,7 @@ import cl.paradigmas.gui.eventos.EventBuilder;
 
 public class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args){
 		Ventana v = new Ventana();
 		v.getToolbar().getBtnLimpiar().addActionListener(EventBuilder.botonlimpiar(v));
 		v.getToolbar().addBtn("LINE", new JToggleButton("LINE"));
