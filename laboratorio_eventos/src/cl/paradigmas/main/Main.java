@@ -17,6 +17,6 @@ public class Main {
 		MouseAdapter adapter=EventBuilder.dibujarcanvas(v);
 		v.getCanvas().addMouseListener(adapter);
 		v.getCanvas().addMouseMotionListener(adapter);
-		v.setVisible(true);
+		v.setVisible(true); 
 	}
 }
