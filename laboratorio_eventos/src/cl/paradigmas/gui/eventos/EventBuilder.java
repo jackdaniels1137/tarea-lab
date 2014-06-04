@@ -38,24 +38,6 @@ final public class EventBuilder{
 	public static MouseAdapter dibujarcanvas(final Ventana d){
 		return new MouseAdapter(){
 			private Point point;
-			public void mouseReleased(MouseEvent event){
-				int select=d.getSeleccionado(); 
-				Canvas ca = d.getCanvas();
-				if(ca.isDibujandoTmp()){ 
-					if(Ventana.LINEA==select){ 
-						Linea line = (Linea)ca.getDibujableTmp(); 
-						ca.setDibujableTmp(null);
-						ca.addDibujable(line);
-					}
-					if(Ventana.CIRCULO==select){
-						Circulo cir=(Circulo)ca.getDibujableTmp();
-						ca.setDibujableTmp(null); 
-						ca.addDibujable(cir);
-					}
-					ca.setDibujandoTmp(false); 
-					ca.repaint();
-				}
-			}
 			public void mousePressed(MouseEvent event){ 
 				Canvas c = d.getCanvas(); 
 				int selected = d.getSeleccionado(); 
@@ -96,7 +78,24 @@ final public class EventBuilder{
 					cc.repaint();
 				}
 			}
-
+			public void mouseReleased(MouseEvent event){
+				int select=d.getSeleccionado(); 
+				Canvas ca = d.getCanvas();
+				if(ca.isDibujandoTmp()){ 
+					if(Ventana.LINEA==select){ 
+						Linea line = (Linea)ca.getDibujableTmp(); 
+						ca.setDibujableTmp(null);
+						ca.addDibujable(line);
+					}
+					if(Ventana.CIRCULO==select){
+						Circulo cir=(Circulo)ca.getDibujableTmp();
+						ca.setDibujableTmp(null); 
+						ca.addDibujable(cir);
+					}
+					ca.setDibujandoTmp(false); 
+					ca.repaint();
+				}
+			}
 		};
 	}
 }
