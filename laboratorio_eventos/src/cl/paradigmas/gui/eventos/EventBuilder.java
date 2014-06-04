@@ -82,15 +82,15 @@ final public class EventBuilder{
 				int select=d.getSeleccionado(); 
 				Canvas ca = d.getCanvas();
 				if(ca.isDibujandoTmp()){ 
-					if(Ventana.LINEA==select){ 
-						Linea line = (Linea)ca.getDibujableTmp(); 
-						ca.setDibujableTmp(null);
-						ca.addDibujable(line);
-					}
 					if(Ventana.CIRCULO==select){
 						Circulo cir=(Circulo)ca.getDibujableTmp();
 						ca.setDibujableTmp(null); 
 						ca.addDibujable(cir);
+					}
+					if(Ventana.LINEA==select){
+						Linea line = (Linea)ca.getDibujableTmp(); 
+						ca.setDibujableTmp(null);
+						ca.addDibujable(line);
 					}
 					ca.setDibujandoTmp(false); 
 					ca.repaint();
